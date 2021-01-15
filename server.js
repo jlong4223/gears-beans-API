@@ -11,6 +11,7 @@ require("./config/database");
 
 // routes defined
 const productsRouter = require("./routes/products");
+const servicesRouter = require("./routes/services");
 
 //want to parse incoming json data?
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(logger("dev"));
 
 // use routes
 app.use("/", productsRouter);
+app.use("/", servicesRouter);
 
 // 6. Define and run the port at 3001
 const port = process.env.PORT || 3001;
