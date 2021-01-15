@@ -4,9 +4,10 @@ const cors = require("cors");
 
 const app = express();
 
-// TODO require .dotenv
-
-// TODO require database file
+//require .dotenv
+require("dotenv").config();
+//require database file
+require("./config/database");
 
 //want to parse incoming json data?
 app.use(express.json());
