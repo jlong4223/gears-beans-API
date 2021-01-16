@@ -2,9 +2,10 @@ const BikeService = require("../models/service");
 
 module.exports = {
   showServices,
-  createService,
   showOneService,
+  createService,
   deleteService,
+  editService,
 };
 
 // TODO set up other crud functions
@@ -45,7 +46,11 @@ async function deleteService(req, res) {
 
 async function editService(req, res) {
   try {
-    const updateService = await BikeService.findByIdAndUpdate;
+    const updateService = await BikeService.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    );
+    res.json(updateService);
   } catch (err) {
     res.json(err);
   }
