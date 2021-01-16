@@ -5,6 +5,8 @@ module.exports = {
   createService,
 };
 
+// TODO set up other crud functions
+
 async function showServices(req, res) {
   const services = await BikeService.find({});
   console.log(services);

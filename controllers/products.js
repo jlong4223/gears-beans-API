@@ -5,6 +5,8 @@ module.exports = {
   createProduct,
 };
 
+// TODO set up other crud functions
+
 async function showProducts(req, res) {
   const products = await Product.find({});
   console.log(products);
