@@ -10,7 +10,7 @@ module.exports = {
 
 async function showServices(req, res) {
   const services = await BikeService.find({});
-  console.log(services);
+  //   console.log(services);
   res.json(services);
 }
 
@@ -32,7 +32,6 @@ async function createService(req, res) {
   }
 }
 
-// TODO change to findByIdAndDelete? this does work though
 async function deleteService(req, res) {
   try {
     const deleteIt = await BikeService.findByIdAndRemove(req.params.id);
