@@ -20,4 +20,9 @@ This is the backend to the Gears N' Beans website.
 
 ### Final
 
-[Click Here]() for the deployed application.
+[Click Here](https://gearsbeans-api.herokuapp.com) for the deployed application.
+
+##### Routes:
+
+- /services
+- /products
