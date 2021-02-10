@@ -5,6 +5,7 @@ module.exports = {
   createReview,
   showOneReview,
   deleteReview,
+  editReview,
 };
 
 async function showReviews(req, res) {
@@ -34,6 +35,18 @@ async function deleteReview(req, res) {
   try {
     const deleteIt = await Review.findByIdAndRemove(req.params.id);
     res.json(deleteIt);
+  } catch (err) {
+    res.json(err);
+  }
+}
+
+async function editReview(req, res) {
+  try {
+    const updateReview = await Review.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    );
+    res.json(updateReview);
   } catch (err) {
     res.json(err);
   }
