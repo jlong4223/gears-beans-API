@@ -33,7 +33,7 @@ async function createReview(req, res) {
 
 async function deleteReview(req, res) {
   try {
-    const deleteIt = await Review.findByIdAndRemove(req.params.id);
+    const deleteIt = await Review.findByIdAndDelete(req.params.id);
     res.json(deleteIt);
   } catch (err) {
     res.json(err);
