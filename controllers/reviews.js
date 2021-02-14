@@ -25,7 +25,7 @@ async function showOneReview(req, res) {
 async function createReview(req, res) {
   try {
     await Review.create(req.body);
-    showReviews();
+    showReviews(req, res);
   } catch (err) {
     res.json(err);
   }
@@ -44,7 +44,7 @@ async function editReview(req, res) {
   try {
     const updateReview = await Review.findByIdAndUpdate(
       req.params.id,
-      req.body
+      req.body,
     );
     res.json(updateReview);
   } catch (err) {
