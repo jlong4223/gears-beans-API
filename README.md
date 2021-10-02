@@ -4,7 +4,7 @@ This is the backend to the Gears N' Beans website.
 
 ### Technologies Used:
 
-- Node.js
+- Node.js (v15.9.0)
 - MongoDB
 - Express
 - Mongoose
@@ -12,11 +12,7 @@ This is the backend to the Gears N' Beans website.
 - CORs
 - Morgan
 - Postman
-- Full CRUD controllers
-
-### Future Enhancements
-
-- add authorization and authentication
+- Json Web Tokens
 
 ### Final
 
