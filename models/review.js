@@ -16,7 +16,8 @@ const reviewSchema = new Schema(
       type: String,
     },
     createdBy: {
-      type: Number,
+      type: String,
+      required: true,
     },
   },
   {
