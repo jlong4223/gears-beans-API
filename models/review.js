@@ -15,6 +15,9 @@ const reviewSchema = new Schema(
     product: {
       type: String,
     },
+    createdBy: {
+      type: Number,
+    },
   },
   {
     timestamps: true,
