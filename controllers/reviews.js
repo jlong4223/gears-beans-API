@@ -6,6 +6,7 @@ module.exports = {
   showOneReview,
   deleteReview,
   editReview,
+  showUserReviews,
 };
 
 async function showReviews(req, res) {
@@ -17,6 +18,16 @@ async function showOneReview(req, res) {
   try {
     const oneReview = await Review.findById(req.params.id);
     res.json(oneReview);
+  } catch (err) {
+    res.json(err);
+  }
+}
+
+async function showUserReviews(req, res) {
+  const { createdBy } = req.params;
+  try {
+    const userReviews = await Review.find({ createdBy });
+    res.json(userReviews);
   } catch (err) {
     res.json(err);
   }
@@ -42,11 +53,11 @@ async function deleteReview(req, res) {
 
 async function editReview(req, res) {
   try {
-    const updateReview = await Review.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-    );
-    res.json(updateReview);
+    await Review.findByIdAndUpdate(req.params.id, req.body);
+
+    const updatedReviews = await Review.findById(req.params.id);
+
+    res.json(updatedReviews);
   } catch (err) {
     res.json(err);
   }

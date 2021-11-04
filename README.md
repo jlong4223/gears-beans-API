@@ -22,3 +22,6 @@ This is the backend to the Gears N' Beans website.
 
 - /services
 - /products
+- /reviews
+
+##### Future Enhancements:
