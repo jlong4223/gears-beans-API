@@ -12,8 +12,9 @@ module.exports = function (req, res, next) {
       if (err) {
         next(err);
       }
-      // It's a valid token, so add user to req
-      req.user = decoded.user;
+
+      const verifiedUser = jwt.verify(token, SECRET);
+      req.user = verifiedUser;
       next();
     });
   } else {
