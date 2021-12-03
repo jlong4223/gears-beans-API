@@ -16,6 +16,9 @@ const bikeServiceSchema = new Schema(
     price: {
       type: Number,
     },
+    type: {
+      type: String,
+    },
   },
   {
     timestamps: true,
